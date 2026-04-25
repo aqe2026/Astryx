@@ -118,7 +118,7 @@ const ProductDetail: React.FC = () => {
             <div className="glass-card p-6 border-l-4 border-l-spiritual-accent">
               <p className="text-[10px] uppercase font-bold text-gray-500 tracking-widest mb-3">Benefits</p>
               <ul className="space-y-2">
-                {product.benefits.map((b, i) => (
+                {product.benefits.map((b: string, i: number) => (
                   <li key={i} className="text-xs text-gray-300 flex items-center gap-2">
                     <ArrowRight size={10} className="text-spiritual-gold" /> {b}
                   </li>

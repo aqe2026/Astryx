@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 import { 
   Trophy, 
   Flame, 
-  Calendar, 
   Award, 
   ShoppingBag, 
   Clock, 
-  ChevronRight,
-  TrendingUp
+  ChevronRight
 } from 'lucide-react';
 
 const Dashboard: React.FC = () => {

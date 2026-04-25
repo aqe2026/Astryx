@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Play, ShoppingBag, MessageSquare, History, Award, ArrowRight } from 'lucide-react';
+import { Sparkles, Play, ShoppingBag, MessageSquare, History, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const LandingPage: React.FC = () => {

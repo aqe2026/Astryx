@@ -1,4 +1,4 @@
-import type { Product, Meditation } from '../../../shared';
+import type { Product, Meditation } from '@shared';
 
 // Using LoremFlickr for highly reliable, keyword-based spiritual imagery (Unsplash Source is deprecated and giving 503)
 const getImgUrl = (query: string, seed: string) =>

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Pause, RotateCcw, Volume2, VolumeX, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Play, Pause, RotateCcw, Volume2, Sparkles } from 'lucide-react';
 
 const MalaCounter: React.FC = () => {
   const [counts, setCounts] = useState(0);
   const [beadPosition, setBeadPosition] = useState(0);
-  const totalBeads = 108;
 
   const handleIncrement = () => {
     setCounts(prev => prev + 1);
@@ -84,11 +83,11 @@ const MeditationPage: React.FC = () => {
   const [time, setTime] = useState(0);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval>;
     if (isPlaying) {
       interval = setInterval(() => setTime(prev => prev + 1), 1000);
     }
-    return () => clearInterval(interval);
+    return () => clearInterval(interval!);
   }, [isPlaying]);
 
   const formatTime = (seconds: number) => {
