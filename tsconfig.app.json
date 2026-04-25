@@ -20,13 +20,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    
-    "baseUrl": ".",
-    "paths": {
-      "@shared": ["../shared/index"],
-      "@shared/*": ["../shared/*"]
-    }
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "../shared/index.ts"]
+  "include": ["src"]
 }
