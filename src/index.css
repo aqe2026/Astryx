@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@theme {
+  --font-outfit: "Outfit", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  
+  --color-spiritual-saffron: #FF9933;
+  --color-spiritual-gold: #FFD700;
+  --color-spiritual-dark: #1A1A1A;
+  --color-spiritual-deep: #0A0A0A;
+  --color-spiritual-accent: #C0A080;
+}
+
+@layer base {
+  body {
+    @apply bg-spiritual-deep text-white font-outfit antialiased selection:bg-spiritual-gold/30 selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair tracking-tight;
+  }
+
+  /* Solid Local Noise Texture */
+  #root {
+    @apply relative min-h-screen overflow-x-hidden;
+  }
+
+  #root::before {
+    content: "";
+    @apply fixed inset-0 z-[-1] opacity-5 pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-[12px] border border-white/10 rounded-2xl shadow-2xl;
+  }
+
+  .btn-primary {
+    @apply relative overflow-hidden bg-spiritual-gold text-spiritual-dark font-bold py-3.5 px-8 rounded-full 
+           hover:shadow-[0_0_30px_rgba(255,215,0,0.3)] transition-all duration-500 hover:scale-[1.02] active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border border-spiritual-accent/40 text-spiritual-accent py-3.5 px-8 rounded-full
+           hover:bg-spiritual-accent/10 hover:border-spiritual-accent transition-all duration-500;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-flow {
+  background-size: 200% 200%;
+  animation: gradient-flow 6s ease infinite;
+}
+
+.animate-slow-spin {
+  animation: slow-spin 20s linear infinite;
+}
